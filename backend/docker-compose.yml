@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: "bitnami/postgresql:latest"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRESQL_USERNAME: postgres
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRESQL_DATABASE: shopify-api
+    volumes:
+      - shopify_pgdata:/bitnami/postgresql
+
+volumes:
+  shopify_pgdata:
