@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div className="min-h-screen min-w-full bg-slate-500">
-      <h2 className="text-4xl text-red-400">hello world!</h2>
-    </div>
+    <article className="flex flex-col gap-10 md:gap-20">
+      <h1 className="text-white py-24">hello</h1>
+    </article>
   );
 }
