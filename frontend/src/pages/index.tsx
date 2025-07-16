@@ -1,4 +1,26 @@
+import { useEffect, useState } from "react";
+import { fetchProducts } from "@/services/api";
+import { ProductCard } from "@/components/product-card/product-card";
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+}
+
 export default function Home() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProducts()
+      .then(setProducts)
+      .catch((err) => console.error("Erro ao buscar produtos:", err))
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <div className="flex flex-col py-24 flex-grow h-full">
       <header className="">
@@ -20,7 +42,18 @@ export default function Home() {
       {/* Search */}
 
       {/* Listagem dos produtos */}
-
+      {loading ? (
+        <p className="text-center">Carregando produtos...</p>
+      ) : (
+        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <li key={product.id}>
+              <ProductCard
+                {...product} />
+            </li>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
