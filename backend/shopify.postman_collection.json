@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "c37b84aa-ccc3-4698-9dbf-4128fdc870f8",
+		"name": "shopify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37892102"
+	},
+	"item": [
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/products/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "16d5f728-53e0-444f-9906-3d52a83b3231"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Bola de Futebol Adidas\",\n    \"description\": \"Bola oficial para jogos profissionais.\",\n    \"price\": 199.9,\n    \"image\": \"https://imgcentauro-a.akamaihd.net/1200x1200/9936590IA2.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 499.9\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/products/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "d9415766-a50e-4fca-8849-81b07e70389a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/products/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "d9415766-a50e-4fca-8849-81b07e70389a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
