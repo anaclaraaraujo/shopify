@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 type ProductCardProps = {
-  id: number;
+  id: string;
   name: string;
   description: string;
   price: number;
@@ -29,7 +29,7 @@ export function ProductCard({ id, name, description, price, image }: ProductCard
       <div className="p-4 flex flex-col justify-between h-full">
         <h2 className="text-heading-sm text-white truncate">{name}</h2>
 
-w        <p className="text-gray-300 text-sm line-clamp-3 mt-2">{description}</p>
+        w        <p className="text-gray-300 text-sm line-clamp-3 mt-2">{description}</p>
 
         <div className="border-t border-gray-400 mt-4 pt-4">
           <span className="text-blue-300 font-bold text-base">R$ {price.toFixed(2)}</span>
